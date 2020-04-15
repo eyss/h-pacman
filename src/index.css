@@ -1,0 +1,115 @@
+*{box-sizing: border-box}
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+  color:yellow;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#pacman{
+  outline: none;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 5px solid #0000BB;
+  padding: 0 1em;
+}
+header button{
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  font-size: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  outline: none;
+}
+#close-scores{
+  position: absolute;
+  top:0;
+  left:100%;
+  transform: translate(-150%,50%);
+  height: 1em;
+  width: 1em;
+  cursor: pointer;
+}
+#close-scores::before,#close-scores::after{
+  content:'';
+  position: absolute;
+  display: block;
+  height: 1.41em;
+  width: 3px;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(45deg);
+  background-color: white;
+}
+#close-scores::after{
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+.modal-container {
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, .8);
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+.modal-container.loading {
+  display: block;
+}
+.modal-container.loading span{
+  display: block;
+  position: absolute;
+  top:39%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+[class$="modal"]{
+  position: absolute;
+  background-color: black;
+  border:.35em solid #00b;
+  color:yellow;
+  padding: 2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 1em;
+}
+[class$="modal"] h3{
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+[class$="modal"] input{
+  border: none;
+  padding: .3em;
+}
+[class$="modal"] button{
+  border: none;
+  padding: .3em;
+  color:black;
+  background-color: yellow;
+  font-weight: bold;
+}
+select{
+  margin-bottom: .5em;
+  border: none;
+  background-color: yellow;
+  font-size: 1em;
+  outline: none;
+}
+table{
+  border-collapse: collapse;
+  min-width: 20vw;
+}
+tr,td{
+  border: 1px solid yellow;
+}
