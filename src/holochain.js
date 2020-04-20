@@ -1,8 +1,11 @@
 import { connect } from '@holochain/hc-web-client'
 
+
 const call = (functionName, params = {}) => {
     return new Promise((succ,err)=>{
-        connect(process.env.NODE_ENV==="development"?{ url: "ws://0.0.0.0:8888"}:undefined).then(async ({callZome, close}) => {
+        connect(
+            process.env.NODE_ENV==="development"?{ url: "ws://localhost:8888"}:undefined
+        ).then(async ({callZome, close}) => {
             let zCall = await callZome('invaders', 'scores', functionName)(params)
             console.log('zCall')
             console.log(zCall)
